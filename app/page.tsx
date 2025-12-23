@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, memo, useRef, useMemo } from 'react';
+import Link from 'next/link';
 import { FreeNoticeModal } from './FreeNoticeModal';
 import { countries, CountryConfig } from '@/lib/countryData';
 import {
@@ -578,15 +579,24 @@ export default function GlassStylePage() {
 
               {/* 页脚 */}
               <footer className="pt-4 pb-8 text-center space-y-4">
-                <a 
-                  href="https://t.me/fang180" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-flex items-center gap-1.5 text-[14px] text-[#409CFF] hover:text-[#60aeff] font-bold transition-all active:scale-95 py-2 px-4 rounded-full bg-black/40 touch-manipulation shadow-lg border border-white/10"
-                >
-                  <Icon name="link" className="w-4 h-4" />
-                  <span className="drop-shadow-md">加入 Telegram 频道</span>
-                </a>
+                <div className="flex flex-col gap-3">
+                  <Link
+                    href="/mail"
+                    className="inline-flex items-center justify-center gap-1.5 text-[14px] text-white font-bold transition-all active:scale-95 py-2.5 px-5 rounded-full bg-gradient-to-r from-[#34C759] to-[#28a745] touch-manipulation shadow-lg border border-white/10"
+                  >
+                    <Icon name="inbox" className="w-4 h-4" />
+                    <span className="drop-shadow-md">临时邮箱大全</span>
+                  </Link>
+                  <a
+                    href="https://t.me/fang180"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 text-[14px] text-[#409CFF] hover:text-[#60aeff] font-bold transition-all active:scale-95 py-2 px-4 rounded-full bg-black/40 touch-manipulation shadow-lg border border-white/10"
+                  >
+                    <Icon name="link" className="w-4 h-4" />
+                    <span className="drop-shadow-md">加入 Telegram 频道</span>
+                  </a>
+                </div>
                 <p className="text-[12px] text-white/80 font-medium tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
                   支持 {countries.length} 个国家 • {allDomains.length} 个域名
                 </p>
